@@ -1,0 +1,64 @@
+@keyframes appearOverlay
+  0%
+    opacity: 0
+  100%
+    opacity: .5
+
+@keyframes appear
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+.modalOverlay
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 1040
+  width: 100vw
+  height: 100vh
+  background-color: $bgc
+  opacity: .5
+  animation: appearOverlay .3s ease
+
+
+.modalWrapper
+  position: fixed
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  z-index: 1050
+  width: 90%
+  height: auto
+  background-color: $pureWhite
+  overflow-x: hidden
+  overflow-y: auto
+  outline: 0
+  border-radius: 10px
+  padding: 15px 20px
+  animation: appear .3s ease
+
+  .modalHeader
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-bottom: 10px
+
+    .modalTitle
+      font-size: 18px
+      line-height: 1
+
+    .modalCloseButton
+      position: absolute
+      top: 0
+      right: 0
+      font-size: 18px
+      line-height: 1
+      cursor: pointer
+      border: none
+      background-color: transparent
+      transition: .2s ease
+
+      &:hover
+        opacity: .6

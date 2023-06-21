@@ -1,0 +1,27 @@
+.sectionHeaderWrap
+  position: relative
+  width: 100%
+  margin: 10px 0
+  overflow: hidden
+  background-color: $bgc
+
+  &:after
+    content: ""
+    display: block
+    position: absolute
+    top: 50%
+    right: 0
+    height: 1px
+    width: 40%
+    background-color: $white06
+
+  .sectionHeader
+    font-size: 14px
+    font-weight: 400
+    letter-spacing: 2px
+    text-transform: uppercase
+    color: $white06
+    text-align: left
+    max-width: calc(60% - 20px)
+
+

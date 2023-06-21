@@ -1,0 +1,35 @@
+.inputWrap
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 100%
+  background-color: $gray
+  border-radius: 25px
+  overflow: hidden
+  padding: 10px 15px 10px 20px
+  min-height: 46px
+
+  .input
+    background-color: $gray
+    border: unset
+    width: 100%
+    color: white
+    font-size: 13px
+    outline: none
+
+  .button
+    width: 20px
+    height: 20px
+    border: unset
+    background: url("/icons/send.svg") no-repeat right center transparent
+    cursor: pointer
+    transition: .2s ease
+
+    &:disabled
+      opacity: .5
+      cursor: not-allowed
+
+    &:hover
+      transform: scale(1.08)
+
+
