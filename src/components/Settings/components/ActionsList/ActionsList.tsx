@@ -17,7 +17,7 @@ export const ActionsList = () => {
       <SectionHeader>Actions</SectionHeader>
       <ul className={styles.actionList}>
         {actions?.map((data) => (
-          <ActionItem key={data.id} data={data} />
+          <ActionItem key={data.record_id} data={data} />
         ))}
       </ul>
     </>
