@@ -1,8 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-module.exports = nextConfig;
-
 module.exports = (phase, { defaultConfig }) => {
   if ('sassOptions' in defaultConfig) {
     defaultConfig['sassOptions'] = {
@@ -10,5 +6,16 @@ module.exports = (phase, { defaultConfig }) => {
       prependData: `@import "styles/_config.sass"`,
     };
   }
-  return defaultConfig;
+  return {
+    defaultConfig,
+    async redirects() {
+      return [
+        {
+          source: '/',
+          destination: '/dashboard',
+          permanent: true,
+        },
+      ];
+    },
+  };
 };
