@@ -6,9 +6,11 @@ export const Input = ({
   className,
   label,
   type = 'text',
-  name,
   textarea = false,
   error,
+  register,
+  validationSchema,
+  name,
   ...rest
 }) => {
   return (
@@ -17,9 +19,23 @@ export const Input = ({
         {label}
       </label>
       {!textarea && (
-        <input {...rest} className={cs(style.input, className)} type={type} name={name} />
+        <input
+          {...register(name)}
+          className={cs(style.input, className)}
+          type={type}
+          name={name}
+          {...register(name, validationSchema)}
+          {...rest}
+        />
       )}
-      {textarea && <textarea {...rest} className={cs(style.input, className)} name={name} />}
+      {textarea && (
+        <textarea
+          className={cs(style.input, className)}
+          name={name}
+          {...register(name, validationSchema)}
+          {...rest}
+        />
+      )}
       {error && <span>error</span>}
     </div>
   );

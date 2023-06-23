@@ -1,7 +1,7 @@
 import React from 'react';
 import * as style from './EditActionItem.module.sass';
-import { Input } from '../../../../../shared/Input/Input';
-import { Button } from '../../../../../shared/Button/Button';
+import { Input } from '@/components/shared/Input/Input';
+import { Button } from '@/components/shared/Button/Button';
 import useModal from '../../../../../../hooks/useModal.jsx';
 import { useForm } from 'react-hook-form';
 import { useContext } from 'react';
@@ -24,28 +24,31 @@ export const EditActionItem = () => {
   return (
     <form className={style.form} onSubmit={handleSubmit(onSubmit)}>
       <Input
-        {...register('title', { required: 'This field is required' })}
         ref={null}
         label='Title'
         name='title'
         error={errors.title}
+        register={register}
+        validationSchema={{ required: 'This field is required' }}
       />
       <Input
-        {...register('prompt', { required: 'This field is required' })}
         ref={null}
         label='Prompt'
         name='prompt'
         textarea
         rows='7'
         error={errors.prompt}
+        register={register}
+        validationSchema={{ required: 'This field is required' }}
       />
-      <Input {...register('title')} ref={null} label='Url' name='url' />
+      <Input ref={null} label='Url' name='url' register={register} />
       <Input
-        {...register('tags', { required: 'This field is required' })}
         ref={null}
         label='Tags'
         name='tags'
         error={errors.tags}
+        register={register}
+        validationSchema={{ required: 'This field is required' }}
       />
       <div className={style.buttonsWrapper}>
         <Button type='submit'>Save</Button>
