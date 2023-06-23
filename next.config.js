@@ -8,6 +8,9 @@ module.exports = (phase, { defaultConfig }) => {
   }
   return {
     defaultConfig,
+    api: {
+      bodyParser: true,
+    },
     async redirects() {
       return [
         {

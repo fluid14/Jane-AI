@@ -1,6 +1,11 @@
+import { NextResponse, NextRequest } from 'next/server';
+
 import getActions from '../../../services/action/get';
+import deleteActions from '../../../services/action/delete';
 
 export default async (req, res) => {
+  const { method, body, query } = await req;
+
   switch (req.method) {
     case 'GET': {
       const actions = await getActions();
@@ -25,11 +30,12 @@ export default async (req, res) => {
     //     }
     //     break;
     // }
-    // case 'DELETE': {
-    //     const marker = await deleteMarker(req.query.id);
-    //     res.status(200).json({ status: 'deleted', marker });
-    //     break;
-    // }
+    case 'DELETE': {
+      const { record } = query;
+      const deletedRecord = await deleteActions(record);
+      res.status(200).json({ status: 'deleted', deletedRecord });
+      break;
+    }
     default:
       res.status(400);
   }

@@ -3,6 +3,9 @@ import { toast } from 'react-toastify';
 
 const apiService = axios.create({
   baseURL: 'api/',
+  headers: {
+    'Content-Type': 'application/json',
+  },
 });
 
 apiService.interceptors.request.use((response) => {
