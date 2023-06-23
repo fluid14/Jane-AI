@@ -13,7 +13,6 @@ export const ActionItem = ({ data: { title, record_id, description, shortcut, ta
   const { isShowing: isShowingEditModal, toggle: toggleEditModal } = useModal();
   const { isShowing: isShowingRemoveModal, toggle: toggleRemoveModal } = useModal();
   const { deleteActions } = useContext(SettingsContext);
-  console.log(record_id);
 
   const confirmCancelAction = () => {
     deleteActions(record_id);
@@ -38,6 +37,8 @@ export const ActionItem = ({ data: { title, record_id, description, shortcut, ta
           shortcut={shortcut}
           tags={tags}
           recordId={record_id}
+          callback={toggleEditModal}
+          cancelAction={toggleEditModal}
         />
       </Modal>
       <Modal isShowing={isShowingRemoveModal} toggle={toggleRemoveModal}>

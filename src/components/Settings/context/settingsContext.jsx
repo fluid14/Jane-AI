@@ -11,13 +11,19 @@ const SettingsContextProvider = ({ children }) => {
   const getActions = async () =>
     await apiService.get(routes.actions).then(({ data }) => setActions(() => data));
 
-  const addActions = async (fields) => await apiService.post(routes.addActions, fields, {});
+  const addActions = async (fields) => await apiService.post(routes.actions, fields, {});
+
+  const updateAction = async (id, fields) => {
+    await apiService.put(routes.actions, { id, fields }, {}).then(() => getActions());
+  };
 
   const deleteActions = async (record) =>
     await apiService.delete(routes.actions, { params: { record } }).then(() => getActions());
 
   return (
-    <SettingsContext.Provider value={{ actions, getActions, addActions, deleteActions }}>
+    <SettingsContext.Provider
+      value={{ actions, getActions, addActions, deleteActions, updateAction }}
+    >
       {children}
     </SettingsContext.Provider>
   );
