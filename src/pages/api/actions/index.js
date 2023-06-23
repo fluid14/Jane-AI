@@ -1,7 +1,5 @@
-import { NextResponse, NextRequest } from 'next/server';
-
-import getActions from '../../../services/action/get';
 import deleteActions from '../../../services/action/delete';
+import getActions from '../../../services/action/get';
 
 export default async (req, res) => {
   const { method, body, query } = await req;

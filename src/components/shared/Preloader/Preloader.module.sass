@@ -6,17 +6,34 @@
     transform: rotate(360deg)
 
 .preloader
-  display: inline-block
-  width: 40px
-  height: 40px
+  position: fixed
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  display: block
+
+  &:before
+    content: ''
+    display: block
+    width: 100vw
+    height: 100vh
+    background-color: $bgc
+    z-index: 99
+    opacity: .6
 
   &:after
-    content: " "
+    content: ""
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
     display: block
     width: 32px
     height: 32px
     margin: 4px
     border-radius: 50%
-    border: 3px solid #fff
+    border: 3px solid
     border-color: #fff transparent #fff transparent
     animation: preloader 1.2s linear infinite
+    z-index: 999

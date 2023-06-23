@@ -1,11 +1,12 @@
 import React from 'react';
 import { createContext, useState } from 'react';
-import { apiService2 } from '../../../services/api.service.js';
+import { useAxios } from '@/hooks/useAxios';
 import routes from '../../../routes.json';
 
 const MessageContext = createContext(null);
 
 const MessageContextProvider = ({ children }) => {
+  const [apiService, apiService2] = useAxios();
   const [messages, setMessages] = useState([]);
   const [usedTokens, setUsedTokens] = useState(0);
 
