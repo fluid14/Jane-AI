@@ -2,6 +2,7 @@ import React from 'react';
 import { createPortal } from 'react-dom';
 import * as style from './Modal.module.sass';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 const Modal = ({ isShowing, toggle, title, children = null }) =>
   isShowing
@@ -18,7 +19,7 @@ const Modal = ({ isShowing, toggle, title, children = null }) =>
                 aria-label='Close'
                 onClick={toggle}
               >
-                <FontAwesomeIcon icon='fa-solid fa-xmark' />
+                <FontAwesomeIcon icon={faXmark} />
               </button>
             </div>
             <div className={style.modalBody}>{children}</div>

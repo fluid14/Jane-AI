@@ -2,10 +2,7 @@ import React from 'react';
 import * as style from './EditActionItem.module.sass';
 import { Input } from '@/components/shared/Input/Input';
 import { Button } from '@/components/shared/Button/Button';
-import useModal from '../../../../../../hooks/useModal.jsx';
 import { useForm } from 'react-hook-form';
-import { useContext } from 'react';
-import { SettingsContext } from '../../../../context/settingsContext.jsx';
 
 export const EditActionItem = ({
   title,
@@ -22,7 +19,6 @@ export const EditActionItem = ({
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const { updateAction } = useContext(SettingsContext);
 
   const onSubmit = (data) => {
     const payload = {
@@ -32,8 +28,7 @@ export const EditActionItem = ({
     };
 
     delete payload.prompt;
-    updateAction(recordId, payload);
-    callback();
+    callback(recordId, payload);
   };
 
   return (

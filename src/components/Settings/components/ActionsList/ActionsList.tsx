@@ -1,9 +1,10 @@
 import React from 'react';
 import { useContext, useEffect } from 'react';
 import { SettingsContext } from '../../context/settingsContext.jsx';
-import { ActionItem } from './components/SettingsActionItem/ActionItem.jsx';
+import { ActionItem } from './components/ActionItem/ActionItem.jsx';
 import * as styles from './ActionsList.module.sass';
 import { SectionHeader } from '../../../shared/text/SectionHeader/SectionHeader';
+import { AddNewAction } from './components/AddNewAction/AddNewAction.jsx';
 
 export const ActionsList = () => {
   const { actions, getActions } = useContext(SettingsContext);
@@ -20,6 +21,7 @@ export const ActionsList = () => {
           <ActionItem key={data.record_id} data={data} />
         ))}
       </ul>
+      <AddNewAction />
     </>
   );
 };
