@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import * as style from './AddNewAction.module.sass';
 import { Button } from '@/components/shared/Button/Button';
 import useModal from '@/hooks/useModal';
 import Modal from '@/components/shared/Modal/Modal';
 import { EditActionItem } from '@/components/Settings/components/ActionsList/components/EditActionItem/EditActionItem';
+import { SettingsContext } from '@/components/Settings/context/settingsContext';
 
 export const AddNewAction = () => {
   const { isShowing: isShowingAddActionModal, toggle: toggleAddActionModal } = useModal();
+  const { addAction } = useContext(SettingsContext);
 
-  const addActionCallback = () => {};
+  const addActionCallback = (recordId, payload) => {
+    addAction(payload);
+    toggleAddActionModal();
+  };
 
   return (
     <>
@@ -20,7 +25,7 @@ export const AddNewAction = () => {
 
       <Modal isShowing={isShowingAddActionModal} toggle={toggleAddActionModal} title='Add action'>
         <EditActionItem
-          callback={toggleAddActionModal}
+          callback={addActionCallback}
           cancelAction={toggleAddActionModal}
           recordId={null}
         />
