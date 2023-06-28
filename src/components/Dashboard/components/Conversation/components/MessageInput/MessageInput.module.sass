@@ -1,4 +1,5 @@
 .inputWrap
+  position: relative
   display: flex
   align-items: center
   justify-content: space-between
@@ -7,12 +8,14 @@
   border-radius: 25px
   overflow: hidden
   padding: 10px 15px 10px 20px
-  min-height: 46px
+  min-height: 70px
 
   .autoGrowInput
     display: inline-grid
     width: calc(100% - 35px)
     max-width: calc(100% - 35px)
+    height: 100%
+    overflow: auto
 
     .textarea
       grid-area: 1 / 1 / 2 / 2
@@ -29,14 +32,6 @@
       grid-area: 1 / 1 / 2 / 2
       visibility: hidden
       white-space: pre-wrap
-
-  .input
-    background-color: $gray
-    border: unset
-    width: 100%
-    color: white
-    font-size: 13px
-    outline: none
 
   .button
     width: 20px

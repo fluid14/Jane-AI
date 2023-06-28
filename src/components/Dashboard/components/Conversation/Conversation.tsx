@@ -8,8 +8,9 @@ export const Conversation = () => {
   return (
     <div className={styles.conversationWrap}>
       <Messages />
-      <MessageInput />
-      <MessageToolbar />
+      <MessageToolbar>
+        <MessageInput />
+      </MessageToolbar>
     </div>
   );
 };

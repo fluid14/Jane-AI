@@ -3,6 +3,7 @@ import * as styles from './MessageInput.module.sass';
 import { useContext, useRef, useState } from 'react';
 import { MessageContext } from '../../../../context/messageContext.jsx';
 import { Input } from '@/components/shared/Input/Input';
+import { Button } from '@/components/shared/Button/Button';
 
 export const MessageInput = () => {
   const [message, setMessage] = useState('');
