@@ -1,5 +1,5 @@
 import React from 'react';
-import * as style from './MessageToolbar.module.sass';
+import * as styles from './MessageToolbar.module.sass';
 import { useContext } from 'react';
 import { MessageContext } from '../../../../context/messageContext.jsx';
 
@@ -9,18 +9,18 @@ export const MessageToolbar = ({ children }) => {
   const handleReset = () => resetConversation();
 
   return (
-    <div className={style.messageToolbar}>
-      <div className={style.topWrap}>
-        <button className={style.button} type='button'>
+    <div className={styles.messageToolbar}>
+      <div className={styles.topWrap}>
+        <button className={styles.button} type='button'>
           actions
         </button>
       </div>
       {children}
-      <div className={style.bottomWrap}>
-        <button className={style.button} type='button' onClick={handleReset}>
+      <div className={styles.bottomWrap}>
+        <button className={styles.button} type='button' onClick={handleReset}>
           Reset conversation
         </button>
-        <p className={style.tokenCounter}>{usedTokens}/8192</p>
+        <p className={styles.tokenCounter}>{usedTokens}/8192</p>
       </div>
     </div>
   );

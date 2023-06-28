@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import * as style from './AddNewAction.module.sass';
+import * as styles from './AddNewAction.module.sass';
 import { Button } from '@/components/shared/Button/Button';
 import useModal from '@/hooks/useModal';
 import Modal from '@/components/shared/Modal/Modal';
@@ -17,7 +17,7 @@ export const AddNewAction = () => {
 
   return (
     <>
-      <div className={style.addNewActionWrap}>
+      <div className={styles.addNewActionWrap}>
         <Button type='primary' onClick={toggleAddActionModal}>
           Add new action
         </Button>

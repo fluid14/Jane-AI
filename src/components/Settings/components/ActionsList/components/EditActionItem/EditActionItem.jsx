@@ -1,5 +1,5 @@
 import React from 'react';
-import * as style from './EditActionItem.module.sass';
+import * as styles from './EditActionItem.module.sass';
 import { Input } from '@/components/shared/Input/Input';
 import { Button } from '@/components/shared/Button/Button';
 import { useForm } from 'react-hook-form';
@@ -34,7 +34,7 @@ export const EditActionItem = ({
   };
 
   return (
-    <form className={style.form} onSubmit={handleSubmit(onSubmit)}>
+    <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
       <Input
         ref={null}
         label='Title'
@@ -84,7 +84,7 @@ export const EditActionItem = ({
         error={errors.tags}
         register={register}
       />
-      <div className={style.buttonsWrapper}>
+      <div className={styles.buttonsWrapper}>
         <Button type='submit'>Save</Button>
         <Button type='button' onClick={cancelAction} danger>
           Cancel

@@ -1,5 +1,5 @@
 import React from 'react';
-import * as style from './Input.module.sass';
+import * as styles from './Input.module.sass';
 import cs from 'classnames';
 
 export const Input = ({
@@ -15,14 +15,14 @@ export const Input = ({
   ...rest
 }) => {
   return (
-    <div className={style.inputWrapper}>
-      <label className={style.label} htmlFor={name}>
+    <div className={styles.inputWrapper}>
+      <label className={styles.label} htmlFor={name}>
         {label}
       </label>
       {!textarea && !autoresize && (
         <input
           {...register(name)}
-          className={cs(style.input, className)}
+          className={cs(styles.input, className)}
           type={type}
           name={name}
           {...register(name, validationSchema)}
@@ -31,7 +31,7 @@ export const Input = ({
       )}
       {textarea && (
         <textarea
-          className={cs(style.input, className)}
+          className={cs(styles.input, className)}
           name={name}
           {...register(name, validationSchema)}
           {...rest}

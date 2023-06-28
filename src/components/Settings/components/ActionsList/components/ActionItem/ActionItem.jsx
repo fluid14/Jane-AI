@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import * as style from './ActionItem.module.sass';
+import * as styles from './ActionItem.module.sass';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button } from '@/components/shared/Button/Button';
 import Modal from '@/components/shared/Modal/Modal.jsx';
@@ -29,9 +29,9 @@ export const ActionItem = ({
 
   return (
     <>
-      <li className={style.actionItem}>
-        <p className={style.title}>{title}</p>
-        <div className={style.buttonsWrap}>
+      <li className={styles.actionItem}>
+        <p className={styles.title}>{title}</p>
+        <div className={styles.buttonsWrap}>
           <Button onClick={toggleEditModal}>
             <FontAwesomeIcon icon={faPenToSquare} />
           </Button>

@@ -1,5 +1,5 @@
 import React from 'react';
-import * as style from './ConfirmModal.module.sass';
+import * as styles from './ConfirmModal.module.sass';
 import { Button } from '@/components/shared/Button/Button';
 
 export default function ConfirmModal({
@@ -8,9 +8,9 @@ export default function ConfirmModal({
   cancelAction = () => {},
 }) {
   return (
-    <div className={style.confirmModalWrap}>
-      <p className={style.text}>{text}</p>
-      <div className={style.buttonsWrap}>
+    <div className={styles.confirmModalWrap}>
+      <p className={styles.text}>{text}</p>
+      <div className={styles.buttonsWrap}>
         <Button onClick={confirmAction}>Confirm</Button>
         <Button danger onClick={cancelAction}>
           Cancel

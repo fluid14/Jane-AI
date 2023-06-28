@@ -9,27 +9,28 @@ export const ActionsWrap = () => {
 
   const handleOpen = () => setOpened(!opened);
 
+  const data = {
+    icon: 'faCartShopping',
+    title: 'TailwindCSS',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  };
+
   return (
     <div className={styles.actionsWrap}>
       <div className={cs(styles.actionsPills, { [styles.active]: opened })}>
-        <Action />
-        <Action />
-        <Action />
-        <Action />
-        <Action />
-        <Action />
-        <Action />
-        <Action />
-        <Action />
-        <Action />
-        <Action />
-        <Action />
-        <Action />
-        <Action />
-        <Action />
-        <Action />
-        <Action />
-        <Action />
+        <Action data={data} />
+        <Action data={data} />
+        <Action data={data} />
+        <Action data={data} />
+        <Action data={data} />
+        <Action data={data} />
+        <Action data={data} />
+        <Action data={data} />
+        <Action data={data} />
+        <Action data={data} />
+        <Action data={data} />
+        <Action data={data} />
+        <Action data={data} />
       </div>
       <button className={styles.openActions} onClick={handleOpen}>
         actions

@@ -1,6 +1,6 @@
 import React from 'react';
 import { createPortal } from 'react-dom';
-import * as style from './Modal.module.sass';
+import * as styles from './Modal.module.sass';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
@@ -8,13 +8,13 @@ const Modal = ({ isShowing, toggle, title, children = null }) =>
   isShowing
     ? createPortal(
         <>
-          <div className={style.modalOverlay} />
-          <div className={style.modalWrapper} aria-modal aria-hidden tabIndex={-1} role='dialog'>
-            <div className={style.modalHeader}>
-              {title && <h2 className={style.modalTitle}>{title}</h2>}
+          <div className={styles.modalOverlay} />
+          <div className={styles.modalWrapper} aria-modal aria-hidden tabIndex={-1} role='dialog'>
+            <div className={styles.modalHeader}>
+              {title && <h2 className={styles.modalTitle}>{title}</h2>}
               <button
                 type='button'
-                className={style.modalCloseButton}
+                className={styles.modalCloseButton}
                 data-dismiss='modal'
                 aria-label='Close'
                 onClick={toggle}
@@ -22,7 +22,7 @@ const Modal = ({ isShowing, toggle, title, children = null }) =>
                 <FontAwesomeIcon icon={faXmark} />
               </button>
             </div>
-            <div className={style.modalBody}>{children}</div>
+            <div className={styles.modalBody}>{children}</div>
           </div>
         </>,
         document.body,
