@@ -1,9 +1,11 @@
 .messageToolbar
+  position: relative
   display: flex
   flex-direction: column
   align-items: center
   justify-content: center
   width: 100%
+  background-color: $gray
 
   .topWrap,
   .bottomWrap
@@ -11,20 +13,16 @@
     align-items: center
     justify-content: space-between
     width: 100%
-    padding: 10px 15px 0 15px
-
-  .topWrap
-    justify-content: flex-end
-    padding: 0 15px 10px 15px
+    padding: 10px
 
   .button,
   .tokenCounter
     background-color: transparent
     border: none
     color: $white
-    font-size: 14px
+    font-size: 12px
     line-height: 1
-    opacity: .8
+    opacity: .6
 
   .button
     cursor: pointer
@@ -32,5 +30,11 @@
 
     &:hover
       opacity: .9
+
+  .action
+    position: absolute
+    top: 10px
+    right: 15px
+    z-index: 9
 
 

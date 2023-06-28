@@ -5,26 +5,15 @@ import cs from 'classnames';
 import { Action } from '@/components/Dashboard/components/Actions/Action/Action';
 
 export const ActionsWrap = () => {
-  const [opened, setOpened] = useState(false);
-
-  const handleOpen = () => setOpened(!opened);
-
   const data = {
-    icon: 'faCartShopping',
+    icon: 'coffee',
     title: 'TailwindCSS',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   };
 
   return (
     <div className={styles.actionsWrap}>
-      <div className={cs(styles.actionsPills, { [styles.active]: opened })}>
-        <Action data={data} />
-        <Action data={data} />
-        <Action data={data} />
-        <Action data={data} />
-        <Action data={data} />
-        <Action data={data} />
-        <Action data={data} />
+      <div className={cs(styles.actionsPills)}>
         <Action data={data} />
         <Action data={data} />
         <Action data={data} />
@@ -32,9 +21,6 @@ export const ActionsWrap = () => {
         <Action data={data} />
         <Action data={data} />
       </div>
-      <button className={styles.openActions} onClick={handleOpen}>
-        actions
-      </button>
     </div>
   );
 };
