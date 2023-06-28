@@ -9,7 +9,9 @@ import { SettingsContext } from '@/components/Settings/context/settingsContext';
 import ConfirmModal from '@/components/shared/Modals/ConfirmModal/ConfirmModal';
 import { faPenToSquare, faTrashCan } from '@fortawesome/free-regular-svg-icons';
 
-export const ActionItem = ({ data: { title, record_id, description, shortcut, tags } }) => {
+export const ActionItem = ({
+  data: { title, user_description: userDescription, record_id, description, shortcut, tags },
+}) => {
   const { isShowing: isShowingEditModal, toggle: toggleEditModal } = useModal();
   const { isShowing: isShowingRemoveModal, toggle: toggleRemoveModal } = useModal();
   const { deleteActions } = useContext(SettingsContext);
@@ -43,6 +45,7 @@ export const ActionItem = ({ data: { title, record_id, description, shortcut, ta
         <EditActionItem
           title={title}
           prompt={description}
+          description={userDescription}
           shortcut={shortcut}
           tags={tags}
           recordId={record_id}

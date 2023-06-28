@@ -4,7 +4,7 @@ const getActions = async () => {
   const actions = await DB('Resources')
     .select({
       filterByFormula: 'IF({category}="actions", "Continue", "")',
-      fields: ['record_id', 'description', 'title', 'url', 'shortcut', 'tags'],
+      fields: ['record_id', 'user_description', 'description', 'title', 'url', 'shortcut', 'tags'],
     })
     .all();
 

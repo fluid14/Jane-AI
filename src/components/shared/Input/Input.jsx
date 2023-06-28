@@ -7,8 +7,9 @@ export const Input = ({
   label,
   type = 'text',
   textarea = false,
+  autoresize = false,
   error,
-  register,
+  register = () => {},
   validationSchema,
   name,
   ...rest
@@ -18,7 +19,7 @@ export const Input = ({
       <label className={style.label} htmlFor={name}>
         {label}
       </label>
-      {!textarea && (
+      {!textarea && !autoresize && (
         <input
           {...register(name)}
           className={cs(style.input, className)}

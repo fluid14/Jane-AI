@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 
 export const EditActionItem = ({
   title,
+  description,
   prompt,
   recordId,
   tags,
@@ -24,6 +25,7 @@ export const EditActionItem = ({
     const payload = {
       ...data,
       description: data.prompt,
+      user_description: data.description,
       category: 'actions',
     };
 
@@ -39,6 +41,17 @@ export const EditActionItem = ({
         name='title'
         defaultValue={title}
         error={errors.title}
+        register={register}
+        validationSchema={{ required: 'This field is required' }}
+      />
+      <Input
+        ref={null}
+        label='Description'
+        name='description'
+        textarea
+        rows='7'
+        defaultValue={description}
+        error={errors.description}
         register={register}
         validationSchema={{ required: 'This field is required' }}
       />
