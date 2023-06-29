@@ -6,7 +6,7 @@ const getActions = async () => {
       filterByFormula: 'IF({category}="actions", "Continue", "")',
       fields: [
         'record_id',
-        'user_description',
+        'userDescription',
         'description',
         'title',
         'icon',

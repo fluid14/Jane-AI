@@ -8,6 +8,7 @@ const ActionsContextProvider = ({ children }) => {
   const [apiService] = useAxios();
   const [actions, setActions] = useState([]);
   const [actionsListState, setActionsList] = useState(false);
+  const [activeAction, _setActiveAction] = useState(null);
 
   const getActions = async () =>
     await apiService.get(routes.actions).then(({ data }) => setActions(() => data));
@@ -24,6 +25,8 @@ const ActionsContextProvider = ({ children }) => {
 
   const toggleActionsList = () => setActionsList((prev) => !prev);
 
+  const setActiveAction = (action) => _setActiveAction(() => action);
+
   return (
     <ActionsContext.Provider
       value={{
@@ -34,6 +37,8 @@ const ActionsContextProvider = ({ children }) => {
         updateAction,
         actionsListState,
         toggleActionsList,
+        activeAction,
+        setActiveAction,
       }}
     >
       {children}

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { createContext, useState } from 'react';
 import { useAxios } from '@/hooks/useAxios';
 import routes from '../routes.json';
+import { ActionsContext } from '@/context/actionsContext';
 
 const MessageContext = createContext(null);
 
@@ -9,20 +10,38 @@ const MessageContextProvider = ({ children }) => {
   const [apiService, apiService2] = useAxios();
   const [messages, setMessages] = useState([]);
   const [usedTokens, setUsedTokens] = useState(0);
+  const { activeAction, setActiveAction } = useContext(ActionsContext);
 
   const request = async (message) => {
-    setMessages((prev) => [...prev, { text: message, isQuestion: true }]);
+    let query = null;
+    let mappedMessage = null;
+    if (activeAction) {
+      mappedMessage = `${activeAction.title}: ${message}`;
+      query = `
+      ${activeAction.prompt}
+      
+      query
+      \`\`\`
+      ${message}
+      \`\`\` 
+      `;
+    } else {
+      query = message;
+      mappedMessage = message;
+    }
+
+    setMessages((prev) => [...prev, { text: mappedMessage, isQuestion: true }]);
     setTimeout(
       () => setMessages((prev) => [...prev, { text: "I'm thinking", isQuestion: false }]),
       1000,
     );
-    await apiService2
-      .post(routes.brain, { query: message }, {})
-      .then(({ data: { answer, tokens } }) => {
-        setMessages((prev) => prev.slice(0, -1));
-        setMessages((prev) => [...prev, { text: answer, isQuestion: false }]);
-        if (tokens) setUsedTokens(() => tokens);
-      });
+
+    await apiService2.post(routes.brain, { query }, {}).then(({ data: { answer, tokens } }) => {
+      setMessages((prev) => prev.slice(0, -1));
+      setMessages((prev) => [...prev, { text: answer, isQuestion: false }]);
+      if (tokens) setUsedTokens(() => tokens);
+      setActiveAction(null);
+    });
   };
 
   const resetConversation = async () => {
