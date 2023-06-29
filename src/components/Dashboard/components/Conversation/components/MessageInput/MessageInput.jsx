@@ -1,7 +1,7 @@
 import React from 'react';
 import * as styles from './MessageInput.module.sass';
 import { useContext, useRef, useState } from 'react';
-import { MessageContext } from '../../../../context/messageContext.jsx';
+import { MessageContext } from '../../../../../../context/messageContext.jsx';
 
 export const MessageInput = () => {
   const [message, setMessage] = useState('');

@@ -4,11 +4,11 @@ import { Button } from '@/components/shared/Button/Button';
 import useModal from '@/hooks/useModal';
 import Modal from '@/components/shared/Modal/Modal';
 import { EditActionItem } from '@/components/Settings/components/ActionsList/components/EditActionItem/EditActionItem';
-import { SettingsContext } from '@/components/Settings/context/settingsContext';
+import { ActionsContext } from '@/context/actionsContext';
 
 export const AddNewAction = () => {
   const { isShowing: isShowingAddActionModal, toggle: toggleAddActionModal } = useModal();
-  const { addAction } = useContext(SettingsContext);
+  const { addAction } = useContext(ActionsContext);
 
   const addActionCallback = (recordId, payload) => {
     addAction(payload);

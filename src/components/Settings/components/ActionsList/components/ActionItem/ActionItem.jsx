@@ -5,17 +5,16 @@ import { Button } from '@/components/shared/Button/Button';
 import Modal from '@/components/shared/Modal/Modal.jsx';
 import useModal from '@/hooks/useModal.jsx';
 import { EditActionItem } from '../EditActionItem/EditActionItem.jsx';
-import { SettingsContext } from '@/components/Settings/context/settingsContext';
 import ConfirmModal from '@/components/shared/Modals/ConfirmModal/ConfirmModal';
 import { faPenToSquare, faTrashCan } from '@fortawesome/free-regular-svg-icons';
+import { ActionsContext } from '@/context/actionsContext';
 
 export const ActionItem = ({
   data: { title, user_description: userDescription, record_id, description, shortcut, tags },
 }) => {
   const { isShowing: isShowingEditModal, toggle: toggleEditModal } = useModal();
   const { isShowing: isShowingRemoveModal, toggle: toggleRemoveModal } = useModal();
-  const { deleteActions } = useContext(SettingsContext);
-  const { updateAction } = useContext(SettingsContext);
+  const { deleteActions, updateAction } = useContext(ActionsContext);
 
   const confirmCancelAction = () => {
     deleteActions(record_id);

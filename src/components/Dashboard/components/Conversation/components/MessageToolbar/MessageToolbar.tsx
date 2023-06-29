@@ -1,7 +1,7 @@
 import React from 'react';
 import * as styles from './MessageToolbar.module.sass';
 import { useContext } from 'react';
-import { MessageContext } from '../../../../context/messageContext.jsx';
+import { MessageContext } from '../../../../../../context/messageContext.jsx';
 import cs from 'classnames';
 
 export const MessageToolbar = ({ children }) => {

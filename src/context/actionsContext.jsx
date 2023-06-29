@@ -1,10 +1,10 @@
 import React from 'react';
 import { createContext, useState } from 'react';
-import routes from '../../../routes.json';
-import { useAxios } from '@/hooks/useAxios';
+import routes from '../routes.json';
+import { useAxios } from '../hooks/useAxios';
 
-const SettingsContext = createContext(null);
-const SettingsContextProvider = ({ children }) => {
+const ActionsContext = createContext(null);
+const ActionsContextProvider = ({ children }) => {
   const [apiService] = useAxios();
   const [actions, setActions] = useState([]);
 
@@ -22,12 +22,12 @@ const SettingsContextProvider = ({ children }) => {
     await apiService.delete(routes.actions, { params: { record } }).then(() => getActions());
 
   return (
-    <SettingsContext.Provider
+    <ActionsContext.Provider
       value={{ actions, getActions, addAction, deleteActions, updateAction }}
     >
       {children}
-    </SettingsContext.Provider>
+    </ActionsContext.Provider>
   );
 };
 
-export { SettingsContextProvider, SettingsContext };
+export { ActionsContextProvider, ActionsContext };

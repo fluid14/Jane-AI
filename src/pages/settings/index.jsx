@@ -1,11 +1,11 @@
 import React from 'react';
-import { SettingsContextProvider } from '../../components/Settings/context/settingsContext';
 import { ActionsList } from '../../components/Settings/components/ActionsList/ActionsList';
+import { ActionsContextProvider } from '../../context/actionsContext';
 
 export default function Settings() {
   return (
-    <SettingsContextProvider>
+    <ActionsContextProvider>
       <ActionsList />
-    </SettingsContextProvider>
+    </ActionsContextProvider>
   );
 }

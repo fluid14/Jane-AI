@@ -10,10 +10,6 @@ export const Header = () => {
 
   return (
     <header className={styles.header}>
-      <Link href='/' className={styles.avatarWrap}>
-        <div className={styles.avatar} />
-        <h1 className={styles.name}>Jane AI</h1>
-      </Link>
       {route !== '/settings' ? (
         <Link href='settings' className={styles.settings}>
           <FontAwesomeIcon icon={faGear} />
