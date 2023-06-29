@@ -1,5 +1,6 @@
 .action
   display: flex
+  flex-direction: column
   align-items: flex-start
   justify-content: flex-start
   width: 100%
@@ -15,25 +16,27 @@
   &:hover
     opacity: 1
 
-  .icon
-    font-size: 14px
+  .titleWrap
+    display: flex
+    align-items: center
     margin-bottom: 5px
-    color: $white
-    margin-right: 20px
-    transition: .3s ease
 
-  .descriptionWrap
+    .icon
+      font-size: 14px
+      color: $white
+      margin-right: 10px
+      transition: .3s ease
+
     .title
       font-size: 14px
       font-weight: 500
-      margin-bottom: 5px
       color: $white
       transition: .3s ease
 
-    .description
-      font-size: 12px
-      color: $white
-      opacity: .8
-      transition: .3s ease
+  .description
+    font-size: 12px
+    color: $white
+    opacity: .8
+    transition: .3s ease
 
 

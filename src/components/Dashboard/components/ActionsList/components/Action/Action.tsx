@@ -5,11 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export const Action = ({ data: { title, icon, description } }) => {
   return (
     <div className={styles.action}>
-      {icon && <FontAwesomeIcon className={styles.icon} icon={['fas', icon]} />}
-      <div className={styles.descriptionWrap}>
+      <div className={styles.titleWrap}>
+        {icon && <FontAwesomeIcon className={styles.icon} icon={['fas', icon]} />}
         <p className={styles.title}>{title}</p>
-        <p className={styles.description}>{description}</p>
       </div>
+      <p className={styles.description}>{description}</p>
     </div>
   );
 };
