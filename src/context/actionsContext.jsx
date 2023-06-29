@@ -1,12 +1,13 @@
 import React from 'react';
 import { createContext, useState } from 'react';
 import routes from '../routes.json';
-import { useAxios } from '../hooks/useAxios';
+import { useAxios } from '@/hooks/useAxios';
 
 const ActionsContext = createContext(null);
 const ActionsContextProvider = ({ children }) => {
   const [apiService] = useAxios();
   const [actions, setActions] = useState([]);
+  const [actionsListState, setActionsList] = useState(false);
 
   const getActions = async () =>
     await apiService.get(routes.actions).then(({ data }) => setActions(() => data));
@@ -21,9 +22,19 @@ const ActionsContextProvider = ({ children }) => {
   const deleteActions = async (record) =>
     await apiService.delete(routes.actions, { params: { record } }).then(() => getActions());
 
+  const toggleActionsList = () => setActionsList((prev) => !prev);
+
   return (
     <ActionsContext.Provider
-      value={{ actions, getActions, addAction, deleteActions, updateAction }}
+      value={{
+        actions,
+        getActions,
+        addAction,
+        deleteActions,
+        updateAction,
+        actionsListState,
+        toggleActionsList,
+      }}
     >
       {children}
     </ActionsContext.Provider>

@@ -10,7 +10,7 @@ import { faPenToSquare, faTrashCan } from '@fortawesome/free-regular-svg-icons';
 import { ActionsContext } from '@/context/actionsContext';
 
 export const ActionItem = ({
-  data: { title, user_description: userDescription, record_id, description, shortcut, tags },
+  data: { title, icon, user_description: userDescription, record_id, description, shortcut, tags },
 }) => {
   const { isShowing: isShowingEditModal, toggle: toggleEditModal } = useModal();
   const { isShowing: isShowingRemoveModal, toggle: toggleRemoveModal } = useModal();
@@ -43,6 +43,7 @@ export const ActionItem = ({
       <Modal isShowing={isShowingEditModal} toggle={toggleEditModal} title='Edit action'>
         <EditActionItem
           title={title}
+          icon={icon}
           prompt={description}
           description={userDescription}
           shortcut={shortcut}

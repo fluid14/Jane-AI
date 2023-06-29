@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 
 export const EditActionItem = ({
   title,
+  icon,
   description,
   prompt,
   recordId,
@@ -43,6 +44,14 @@ export const EditActionItem = ({
         error={errors.title}
         register={register}
         validationSchema={{ required: 'This field is required' }}
+      />
+      <Input
+        ref={null}
+        label='Icon'
+        name='icon'
+        defaultValue={icon}
+        error={errors.icon}
+        register={register}
       />
       <Input
         ref={null}

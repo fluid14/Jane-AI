@@ -1,18 +1,26 @@
 .actionsWrap
   position: fixed
-  top: 50%
+  bottom: 0
   left: 50%
-  transform: translate(-50%, -50%)
-  width: 90%
+  transform: translate(-50%, 100%)
+  width: 95vw
   padding: 0 0 20px
   margin-bottom: 10px
+  max-height: calc(100vh - 125px)
+  overflow-y: auto
+  transition: .5s ease
+  z-index: 99
+
+  &.active
+    transform: translate(-50%, calc(0% - 90px))
 
   .actionsPills
     display: flex
     flex-direction: column
     align-items: flex-start
     justify-content: flex-start
-    max-width: 100%
+    max-width: 92%
+    margin: 0 auto
     overflow-y: scroll
     transition: .3s ease
 
