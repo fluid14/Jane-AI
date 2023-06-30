@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import * as styles from './Messages.module.sass';
 import { MessageContext } from '@/context/messageContext';
 import cs from 'classnames';
@@ -22,7 +22,15 @@ SyntaxHighlighter.registerLanguage('json', json);
 
 export const Messages = () => {
   const { messages } = useContext(MessageContext);
+  const messagesRef = useRef(null);
   const syntaxTheme = oneDark;
+
+  useEffect(() => {
+    scrollToLastMessage();
+  }, [messages]);
+
+  const scrollToLastMessage = () =>
+    messagesRef.current?.lastElementChild?.scrollIntoView({ behavior: 'smooth' });
 
   const MarkdownComponents = {
     code({ node, inline, className, ...props }) {
@@ -62,7 +70,7 @@ export const Messages = () => {
   };
 
   return (
-    <div className={styles.messages}>
+    <div className={styles.messages} ref={messagesRef}>
       {messages?.map(({ text, isQuestion }, index) => (
         <div className={cs(styles.messageCloud, { [styles.isQuestion]: isQuestion })} key={index}>
           <ReactMarkdown className={styles.text} components={MarkdownComponents}>
