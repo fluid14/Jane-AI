@@ -9,7 +9,7 @@ export const ActionsList = () => {
   const { actions, getActions } = useContext(ActionsContext);
 
   useEffect(() => {
-    getActions().then((data) => console.log(data));
+    getActions();
   }, []);
 
   return (

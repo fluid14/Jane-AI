@@ -12,7 +12,10 @@
   },
   "tauri": {
     "allowlist": {
-      "all": false
+      "all": false,
+      "globalShortcut": {
+        "all": true
+      }
     },
     "bundle": {
       "active": true,
@@ -55,11 +58,14 @@
     },
     "windows": [
       {
+        "label": "launcher",
         "fullscreen": false,
-        "height": 600,
+        "maximizable": false,
         "resizable": true,
         "title": "Jane AI Assistant",
-        "width": 800
+        "height": 800,
+        "width": 500,
+        "minWidth": 400
       }
     ]
   }
