@@ -3,11 +3,14 @@ import * as styles from './Action.module.sass';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ActionsContext } from '@/context/actionsContext';
 
-export const Action = ({ data: { title, icon, description: prompt, userDescription, url } }) => {
+export const Action = ({
+  data: action,
+  data: { title, icon, description: prompt, userDescription, url },
+}) => {
   const { setActiveAction, toggleActionsList } = useContext(ActionsContext);
 
   const handleActionClick = () => {
-    setActiveAction({ prompt, url, title });
+    setActiveAction(action);
     toggleActionsList();
   };
 
