@@ -1,24 +1,23 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import * as styles from './MessageInput.module.sass';
-import { useContext, useRef, useState } from 'react';
+import { useContext, useRef } from 'react';
 import { MessageContext } from '@/context/messageContext';
 import { ActionsContext } from '@/context/actionsContext';
 
 export const MessageInput = () => {
-  const [message, setMessage] = useState('');
-  const { request: brainRequest } = useContext(MessageContext);
+  const { request: brainRequest, message, setMessageText } = useContext(MessageContext);
   const { actionsListState, toggleActionsList } = useContext(ActionsContext);
 
   const sendButtonRef = useRef();
   const inputRef = useRef();
 
-  const handleChange = ({ target: { value } }) => setMessage(value);
+  const handleChange = ({ target: { value } }) => setMessageText(value);
 
   const handleSend = async () => {
     if (actionsListState) toggleActionsList();
     sendButtonRef.current.disabled = true;
     inputRef.current.disabled = true;
-    setMessage('');
+    setMessageText('');
     await brainRequest(message).then(() => {
       sendButtonRef.current.disabled = false;
       inputRef.current.disabled = false;

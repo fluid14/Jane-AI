@@ -8,6 +8,7 @@ const MessageContext = createContext(null);
 
 const MessageContextProvider = ({ children }) => {
   const { apiService2 } = useAxios();
+  const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
   const [usedTokens, setUsedTokens] = useState(0);
   const { activeAction, setActiveAction } = useContext(ActionsContext);
@@ -51,8 +52,12 @@ const MessageContextProvider = ({ children }) => {
     });
   };
 
+  const setMessageText = (text) => setMessage(() => text);
+
   return (
-    <MessageContext.Provider value={{ messages, request, usedTokens, resetConversation }}>
+    <MessageContext.Provider
+      value={{ message, setMessageText, messages, request, usedTokens, resetConversation }}
+    >
       {children}
     </MessageContext.Provider>
   );

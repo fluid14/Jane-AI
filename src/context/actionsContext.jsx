@@ -25,10 +25,7 @@ const ActionsContextProvider = ({ children }) => {
 
   const toggleActionsList = () => setActionsList((prev) => !prev);
 
-  const setActiveAction = (action) => {
-    _setActiveAction(() => action);
-    console.log(action);
-  };
+  const setActiveAction = (action) => _setActiveAction(() => action);
 
   return (
     <ActionsContext.Provider
