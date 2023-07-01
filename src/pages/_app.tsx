@@ -8,18 +8,21 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { ShortcutsContextProvider } from '@/context/shortcutsContext';
+import { ActionsContextProvider } from '@/context/actionsContext';
+import { MessageContextProvider } from '@/context/messageContext';
 
 require('@fortawesome/fontawesome-svg-core').library.add(fas, far, fab);
 config.autoAddCss = false;
 
 export default function App({ Component, pageProps }) {
   return (
-    <ShortcutsContextProvider>
-      <Layout>
-        <Component {...pageProps} />
-        <ToastContainer theme='dark' />
-      </Layout>
-    </ShortcutsContextProvider>
+    <Layout>
+      <ActionsContextProvider>
+        <MessageContextProvider>
+          <Component {...pageProps} />
+          <ToastContainer theme='dark' />
+        </MessageContextProvider>
+      </ActionsContextProvider>
+    </Layout>
   );
 }

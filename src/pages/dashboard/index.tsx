@@ -1,18 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Conversation } from '@/components/Dashboard/components/Conversation/Conversation';
-import { MessageContextProvider } from '@/context/messageContext';
 import { ActionsList } from '@/components/Dashboard/components/ActionsList/ActionsList';
-import { ActionsContextProvider } from '@/context/actionsContext';
+import { initShortcuts } from '@/services/shortcuts.service';
 
 export default function Dashboard() {
+  useEffect(() => {
+    initShortcuts().then(() => console.log('Shortcuts initialized'));
+  }, []);
+
   return (
     <>
-      <ActionsContextProvider>
-        <MessageContextProvider>
-          <ActionsList />
-          <Conversation />
-        </MessageContextProvider>
-      </ActionsContextProvider>
+      <ActionsList />
+      <Conversation />
     </>
   );
 }
