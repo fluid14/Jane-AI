@@ -5,7 +5,7 @@ import { useAxios } from '@/hooks/useAxios';
 
 const ActionsContext = createContext(null);
 const ActionsContextProvider = ({ children }) => {
-  const [apiService] = useAxios();
+  const { apiService } = useAxios();
   const [actions, setActions] = useState([]);
   const [actionsListState, setActionsList] = useState(false);
   const [activeAction, _setActiveAction] = useState(null);

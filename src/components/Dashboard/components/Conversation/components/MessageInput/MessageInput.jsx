@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import * as styles from './MessageInput.module.sass';
 import { useContext, useRef, useState } from 'react';
 import { MessageContext } from '@/context/messageContext';

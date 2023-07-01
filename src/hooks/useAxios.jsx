@@ -46,5 +46,5 @@ export const useAxios = () => {
     },
   );
 
-  return [apiService, apiService2];
+  return { apiService, apiService2 };
 };

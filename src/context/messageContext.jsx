@@ -7,7 +7,7 @@ import { ActionsContext } from '@/context/actionsContext';
 const MessageContext = createContext(null);
 
 const MessageContextProvider = ({ children }) => {
-  const [apiService, apiService2] = useAxios();
+  const { apiService2 } = useAxios();
   const [messages, setMessages] = useState([]);
   const [usedTokens, setUsedTokens] = useState(0);
   const { activeAction, setActiveAction } = useContext(ActionsContext);
