@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import { PreloaderContext } from '@/components/shared/Preloader/context/preloaderContext';
+import { PreloaderContext } from '../components/shared/Preloader/context/preloaderContext';
 
 export const useAxios = () => {
   const { showPreloader, hidePreloader } = useContext(PreloaderContext);

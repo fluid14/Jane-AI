@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { createContext, useState } from 'react';
-import { useAxios } from '@/hooks/useAxios';
+import { useAxios } from '../hooks/useAxios';
 import routes from '../routes.json';
-import { ActionsContext } from '@/context/actionsContext';
+import { ActionsContext } from './actionsContext';
 
 const MessageContext = createContext(null);
 

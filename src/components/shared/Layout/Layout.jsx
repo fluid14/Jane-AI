@@ -1,8 +1,8 @@
 import React from 'react';
 import * as styles from './Layout.module.sass';
-import { PreloaderContextProvider } from '@/components/shared/Preloader/context/preloaderContext';
-import { Header } from '@/components/shared/Header/Header';
-import { Preloader } from '@/components/shared/Preloader/Preloader';
+import { PreloaderContextProvider } from '../Preloader/context/preloaderContext';
+import { Header } from '../Header/Header';
+import { Preloader } from '../Preloader/Preloader';
 
 export default function Layout({ children }) {
   return (

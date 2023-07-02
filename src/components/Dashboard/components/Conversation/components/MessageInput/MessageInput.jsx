@@ -1,8 +1,8 @@
 import React from 'react';
 import * as styles from './MessageInput.module.sass';
 import { useContext, useRef } from 'react';
-import { MessageContext } from '@/context/messageContext';
-import { ActionsContext } from '@/context/actionsContext';
+import { MessageContext } from '../../../../../../context/messageContext';
+import { ActionsContext } from '../../../../../../context/actionsContext';
 
 export const MessageInput = () => {
   const { request: brainRequest, message, setMessageText } = useContext(MessageContext);

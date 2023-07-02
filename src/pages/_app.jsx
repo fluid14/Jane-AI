@@ -8,8 +8,8 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { ActionsContextProvider } from '@/context/actionsContext';
-import { MessageContextProvider } from '@/context/messageContext';
+import { ActionsContextProvider } from '../context/actionsContext';
+import { MessageContextProvider } from '../context/messageContext';
 
 require('@fortawesome/fontawesome-svg-core').library.add(fas, far, fab);
 config.autoAddCss = false;

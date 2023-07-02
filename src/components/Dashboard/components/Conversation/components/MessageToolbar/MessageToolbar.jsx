@@ -1,9 +1,9 @@
 import React from 'react';
 import * as styles from './MessageToolbar.module.sass';
 import { useContext } from 'react';
-import { MessageContext } from '@/context/messageContext';
+import { MessageContext } from '../../../../../../context/messageContext';
 import cs from 'classnames';
-import { ActionsContext } from '@/context/actionsContext';
+import { ActionsContext } from '../../../../../../context/actionsContext';
 
 export const MessageToolbar = ({ children }) => {
   const { usedTokens, resetConversation } = useContext(MessageContext);

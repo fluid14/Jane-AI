@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
 import * as styles from './ActionItem.module.sass';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Button } from '@/components/shared/Button/Button';
-import Modal from '@/components/shared/Modal/Modal.jsx';
-import useModal from '@/hooks/useModal.jsx';
+import { Button } from '../../../../../shared/Button/Button';
+import Modal from '../../../../../shared/Modal/Modal';
+import useModal from '../../../../../../hooks/useModal';
 import { EditActionItem } from '../EditActionItem/EditActionItem.jsx';
-import ConfirmModal from '@/components/shared/Modals/ConfirmModal/ConfirmModal';
+import ConfirmModal from '../../../../../shared/Modals/ConfirmModal/ConfirmModal';
 import { faPenToSquare, faTrashCan } from '@fortawesome/free-regular-svg-icons';
-import { ActionsContext } from '@/context/actionsContext';
+import { ActionsContext } from '../../../../../../context/actionsContext';
 
 export const ActionItem = ({
   data: { title, icon, userDescription, record_id, description, shortcut, tags },

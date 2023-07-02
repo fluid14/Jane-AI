@@ -1,7 +1,7 @@
 import React from 'react';
 import { createContext, useState } from 'react';
 import routes from '../routes.json';
-import { useAxios } from '@/hooks/useAxios';
+import { useAxios } from '../hooks/useAxios';
 
 const ActionsContext = createContext(null);
 const ActionsContextProvider = ({ children }) => {

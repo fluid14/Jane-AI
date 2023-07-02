@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import * as styles from './Action.module.sass';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { ActionsContext } from '@/context/actionsContext';
+import { ActionsContext } from '../../../../../../context/actionsContext';
 
 export const Action = ({
   data: action,

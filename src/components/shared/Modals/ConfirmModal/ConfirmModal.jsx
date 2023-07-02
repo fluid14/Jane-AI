@@ -1,6 +1,6 @@
 import React from 'react';
 import * as styles from './ConfirmModal.module.sass';
-import { Button } from '@/components/shared/Button/Button';
+import { Button } from '../../Button/Button';
 
 export default function ConfirmModal({
   text = '',

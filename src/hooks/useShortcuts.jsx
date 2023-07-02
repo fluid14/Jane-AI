@@ -1,9 +1,9 @@
 import { useContext } from 'react';
-import { ActionsContext } from '@/context/actionsContext';
+import { ActionsContext } from '../context/actionsContext';
 import { isRegistered, register } from '@tauri-apps/api/globalShortcut';
 import { invoke } from '@tauri-apps/api/tauri';
 import { readText } from '@tauri-apps/api/clipboard';
-import { MessageContext } from '@/context/messageContext';
+import { MessageContext } from '../context/messageContext';
 
 export const useShortcuts = () => {
   const { actions, setActiveAction } = useContext(ActionsContext);

@@ -4,7 +4,7 @@ import { ActionItem } from './components/ActionItem/ActionItem.jsx';
 import * as styles from './ActionsList.module.sass';
 import { SectionHeader } from '../../../shared/text/SectionHeader/SectionHeader';
 import { AddNewAction } from './components/AddNewAction/AddNewAction.jsx';
-import { ActionsContext } from '@/context/actionsContext';
+import { ActionsContext } from '../../../../context/actionsContext';
 
 export const ActionsList = () => {
   const { actions, getActions } = useContext(ActionsContext);

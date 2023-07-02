@@ -1,7 +1,7 @@
 import React from 'react';
 import * as styles from './EditActionItem.module.sass';
-import { Input } from '@/components/shared/Input/Input';
-import { Button } from '@/components/shared/Button/Button';
+import { Input } from '../../../../../shared/Input/Input';
+import { Button } from '../../../../../shared/Button/Button';
 import { useForm } from 'react-hook-form';
 
 export const EditActionItem = ({

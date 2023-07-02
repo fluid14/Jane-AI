@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from 'react';
 import * as styles from './ActionsList.module.sass';
 import cs from 'classnames';
-import { Action } from '@/components/Dashboard/components/ActionsList/components/Action/Action';
-import { ActionsContext } from '@/context/actionsContext';
+import { Action } from './components/Action/Action';
+import { ActionsContext } from '../../../../context/actionsContext';
 
 export const ActionsList = () => {
   const { actionsListState } = useContext(ActionsContext);

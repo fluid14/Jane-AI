@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef } from 'react';
 import * as styles from './Messages.module.sass';
-import { MessageContext } from '@/context/messageContext';
+import { MessageContext } from '../../../../../../context/messageContext';
 import cs from 'classnames';
 import ReactMarkdown from 'react-markdown';
 import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter';

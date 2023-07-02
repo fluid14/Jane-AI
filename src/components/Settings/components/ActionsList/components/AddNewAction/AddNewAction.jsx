@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import * as styles from './AddNewAction.module.sass';
-import { Button } from '@/components/shared/Button/Button';
-import useModal from '@/hooks/useModal';
-import Modal from '@/components/shared/Modal/Modal';
-import { EditActionItem } from '@/components/Settings/components/ActionsList/components/EditActionItem/EditActionItem';
-import { ActionsContext } from '@/context/actionsContext';
+import { Button } from '../../../../../shared/Button/Button';
+import useModal from '../../../../../../hooks/useModal';
+import Modal from '../../../../../shared/Modal/Modal';
+import { EditActionItem } from '../EditActionItem/EditActionItem';
+import { ActionsContext } from '../../../../../../context/actionsContext';
 
 export const AddNewAction = () => {
   const { isShowing: isShowingAddActionModal, toggle: toggleAddActionModal } = useModal();
