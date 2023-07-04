@@ -15,14 +15,5 @@ module.exports = (phase, { defaultConfig }) => {
       appDir: true,
     },
     distDir: 'dist',
-    // async redirects() {
-    //   return [
-    //     {
-    //       source: '/',
-    //       destination: '/dashboard',
-    //       permanent: true,
-    //     },
-    //   ];
-    // },
   };
 };
