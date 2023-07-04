@@ -11,14 +11,18 @@ module.exports = (phase, { defaultConfig }) => {
     api: {
       bodyParser: true,
     },
-    async redirects() {
-      return [
-        {
-          source: '/',
-          destination: '/dashboard',
-          permanent: true,
-        },
-      ];
+    experimental: {
+      appDir: true,
     },
+    distDir: 'dist',
+    // async redirects() {
+    //   return [
+    //     {
+    //       source: '/',
+    //       destination: '/dashboard',
+    //       permanent: true,
+    //     },
+    //   ];
+    // },
   };
 };
