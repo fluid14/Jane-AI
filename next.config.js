@@ -7,7 +7,7 @@ module.exports = (phase, { defaultConfig }) => {
     };
   }
   return {
-    // output: 'export',
+    output: 'export',
     defaultConfig,
     runtime: 'nodejs',
     distDir: 'dist',

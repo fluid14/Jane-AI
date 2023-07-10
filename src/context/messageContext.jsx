@@ -19,7 +19,7 @@ const MessageContextProvider = ({ children }) => {
     if (activeAction) {
       mappedMessage = `${activeAction.title}: ${message}`;
       query = `
-      ${activeAction.prompt}
+      ${activeAction.description}
       
       query
       \`\`\`

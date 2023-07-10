@@ -19,13 +19,13 @@ const ActionsContextProvider = ({ children }) => {
   };
 
   const updateAction = async (id, fields) => {
-    await apiService.put(routes.actions, { id, fields }, {}).then(() => getActions());
+    await apiService
+      .put(routes.editAction.replace('{actionId}', id), fields, {})
+      .then(() => getActions());
   };
 
-  const deleteActions = async (record) =>
-    await apiService
-      .delete(routes.deleteAction.replace('{actionId}', record))
-      .then(() => getActions());
+  const deleteActions = async (id) =>
+    await apiService.delete(routes.editAction.replace('{actionId}', id)).then(() => getActions());
 
   const toggleActionsList = () => setActionsList((prev) => !prev);
 

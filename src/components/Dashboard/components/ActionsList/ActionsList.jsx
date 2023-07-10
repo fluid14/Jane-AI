@@ -14,7 +14,7 @@ export const ActionsList = () => {
   return (
     <div className={cs(styles.actionsWrap, { [styles.active]: actionsListState })}>
       <div className={styles.actionsPills}>
-        {/*{actions && actions?.map((data) => <Action key={data?.record_id} data={data} />)}*/}
+        {actions && actions?.map((data) => <Action key={data?.record_id} data={data} />)}
       </div>
     </div>
   );

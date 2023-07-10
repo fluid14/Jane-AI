@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import { PreloaderContext } from '../components/shared/Preloader/context/preloaderContext';
 
 export const useAxios = () => {
-  // const { showPreloader, hidePreloader } = useContext(PreloaderContext);
+  const { showPreloader, hidePreloader } = useContext(PreloaderContext);
 
   const apiService = axios.create({
     baseURL: 'http://localhost:3000/',
@@ -26,7 +26,7 @@ export const useAxios = () => {
     },
     (error) => {
       console.error(error);
-      toast.error(error.response.data.message);
+      toast.error(error.response?.data.message);
     },
   );
 
