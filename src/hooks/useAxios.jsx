@@ -21,7 +21,7 @@ export const useAxios = () => {
   apiService.interceptors.response.use(
     (response) => {
       // hidePreloader();
-      toast.success(response.data.status);
+      toast.success(response.data.message);
       return response;
     },
     (error) => {

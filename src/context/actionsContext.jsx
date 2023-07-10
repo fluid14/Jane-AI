@@ -13,8 +13,10 @@ const ActionsContextProvider = ({ children }) => {
   const getActions = async () =>
     await apiService.get(routes.actions).then(({ data }) => setActions(() => data));
 
-  const addAction = async (fields) =>
-    await apiService.post(routes.actions, { fields }, {}).then(() => getActions());
+  const addAction = async (fields) => {
+    fields.category = 'actions';
+    await apiService.post(routes.actions, fields, {}).then(() => getActions());
+  };
 
   const updateAction = async (id, fields) => {
     await apiService.put(routes.actions, { id, fields }, {}).then(() => getActions());
