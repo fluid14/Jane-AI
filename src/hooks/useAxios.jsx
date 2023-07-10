@@ -4,23 +4,23 @@ import { toast } from 'react-toastify';
 import { PreloaderContext } from '../components/shared/Preloader/context/preloaderContext';
 
 export const useAxios = () => {
-  const { showPreloader, hidePreloader } = useContext(PreloaderContext);
+  // const { showPreloader, hidePreloader } = useContext(PreloaderContext);
 
   const apiService = axios.create({
-    baseURL: 'api/',
+    baseURL: 'http://localhost:3000/',
     headers: {
       'Content-Type': 'application/json',
     },
   });
 
   apiService.interceptors.request.use((response) => {
-    showPreloader();
+    // showPreloader();
     return response;
   });
 
   apiService.interceptors.response.use(
     (response) => {
-      hidePreloader();
+      // hidePreloader();
       toast.success(response.data.status);
       return response;
     },

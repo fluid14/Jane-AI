@@ -5,7 +5,7 @@
     "beforeDevCommand": "npm run dev -- --port 3000",
     "devPath": "http://localhost:3000",
     "distDir": "../dist",
-    "withGlobalTauri": false
+    "withGlobalTauri": true
   },
   "package": {
     "productName": "Jane Ai Assistant",

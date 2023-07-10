@@ -6,7 +6,7 @@ import { SectionHeader } from '../../../shared/text/SectionHeader/SectionHeader'
 import { AddNewAction } from './components/AddNewAction/AddNewAction.jsx';
 import { ActionsContext } from '../../../../context/actionsContext';
 
-export const ActionsList = () => {
+export const ActionsList = (data) => {
   const { actions, getActions } = useContext(ActionsContext);
 
   useEffect(() => {
@@ -17,9 +17,7 @@ export const ActionsList = () => {
     <>
       <SectionHeader>Actions</SectionHeader>
       <ul className={styles.actionList}>
-        {actions?.map((data) => (
-          <ActionItem key={data.record_id} data={data} />
-        ))}
+        {actions && actions?.map((data) => <ActionItem key={data?.record_id} data={data} />)}
       </ul>
       <AddNewAction />
     </>

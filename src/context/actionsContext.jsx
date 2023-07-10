@@ -6,7 +6,7 @@ import { useAxios } from '../hooks/useAxios';
 const ActionsContext = createContext(null);
 const ActionsContextProvider = ({ children }) => {
   const { apiService } = useAxios();
-  const [actions, setActions] = useState([]);
+  const [actions, setActions] = useState(null);
   const [actionsListState, setActionsList] = useState(false);
   const [activeAction, _setActiveAction] = useState(null);
 
@@ -21,7 +21,9 @@ const ActionsContextProvider = ({ children }) => {
   };
 
   const deleteActions = async (record) =>
-    await apiService.delete(routes.actions, { params: { record } }).then(() => getActions());
+    await apiService
+      .delete(routes.deleteAction.replace('{actionId}', record))
+      .then(() => getActions());
 
   const toggleActionsList = () => setActionsList((prev) => !prev);
 

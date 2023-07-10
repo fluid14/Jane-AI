@@ -5,8 +5,7 @@ import { Action } from './components/Action/Action';
 import { ActionsContext } from '../../../../context/actionsContext';
 
 export const ActionsList = () => {
-  const { actionsListState } = useContext(ActionsContext);
-  const { actions, getActions } = useContext(ActionsContext);
+  const { actions, getActions, actionsListState } = useContext(ActionsContext);
 
   useEffect(() => {
     getActions();
@@ -15,9 +14,7 @@ export const ActionsList = () => {
   return (
     <div className={cs(styles.actionsWrap, { [styles.active]: actionsListState })}>
       <div className={styles.actionsPills}>
-        {actions?.map((data) => (
-          <Action key={data.record_id} data={data} />
-        ))}
+        {/*{actions && actions?.map((data) => <Action key={data?.record_id} data={data} />)}*/}
       </div>
     </div>
   );

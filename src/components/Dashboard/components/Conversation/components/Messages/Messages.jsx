@@ -71,13 +71,14 @@ export const Messages = () => {
 
   return (
     <div className={styles.messages} ref={messagesRef}>
-      {messages?.map(({ text, isQuestion }, index) => (
-        <div className={cs(styles.messageCloud, { [styles.isQuestion]: isQuestion })} key={index}>
-          <ReactMarkdown className={styles.text} components={MarkdownComponents}>
-            {text}
-          </ReactMarkdown>
-        </div>
-      ))}
+      {messages &&
+        messages?.map(({ text, isQuestion }, index) => (
+          <div className={cs(styles.messageCloud, { [styles.isQuestion]: isQuestion })} key={index}>
+            <ReactMarkdown className={styles.text} components={MarkdownComponents}>
+              {text}
+            </ReactMarkdown>
+          </div>
+        ))}
     </div>
   );
 };

@@ -7,13 +7,9 @@ module.exports = (phase, { defaultConfig }) => {
     };
   }
   return {
+    // output: 'export',
     defaultConfig,
-    api: {
-      bodyParser: true,
-    },
-    experimental: {
-      appDir: true,
-    },
+    runtime: 'nodejs',
     distDir: 'dist',
   };
 };
