@@ -62,7 +62,6 @@
     "updater": {
       "active": false
     },
-    "macOSPrivateApi": true,
     "windows": [
       {
         "label": "launcher",
@@ -77,8 +76,7 @@
         "y": 0,
         "alwaysOnTop": true,
         "titleBarStyle": "Overlay",
-        "hiddenTitle": true,
-        "transparent": true
+        "hiddenTitle": true
       }
     ]
   }
