@@ -4,7 +4,7 @@
 )]
 use tauri::{App, AppHandle, GlobalShortcutManager, Manager};
 
-const OPEN_APP_SHORTCUT: &str = "Shift+CmdOrCtrl+a";
+const OPEN_APP_SHORTCUT: &str = "Shift+Ctrl+a";
 const WINDOW: &str = "launcher";
 
 #[tauri::command]

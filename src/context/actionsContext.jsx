@@ -31,6 +31,8 @@ const ActionsContextProvider = ({ children }) => {
 
   const setActiveAction = (action) => _setActiveAction(() => action);
 
+  const resetActiveAction = () => _setActiveAction(() => null);
+
   return (
     <ActionsContext.Provider
       value={{
@@ -43,6 +45,7 @@ const ActionsContextProvider = ({ children }) => {
         toggleActionsList,
         activeAction,
         setActiveAction,
+        resetActiveAction,
       }}
     >
       {children}

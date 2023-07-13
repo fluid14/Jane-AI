@@ -27,7 +27,7 @@ export const useShortcuts = () => {
   };
 
   const defaultShortcuts = async () => {
-    const shortcuts = [{ shortcut: 'CommandOrControl+Shift+C', action: null }];
+    const shortcuts = [{ shortcut: 'Ctrl+Shift+C', action: null }];
     for (const { shortcut, action } of shortcuts) {
       await registerShortcut(shortcut, action);
     }

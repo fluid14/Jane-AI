@@ -10,6 +10,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     initShortcuts();
+    console.log('initShortcuts');
   }, [actions]);
 
   return (

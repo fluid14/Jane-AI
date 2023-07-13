@@ -7,14 +7,19 @@ import { ActionsContext } from '../../../../../../context/actionsContext';
 
 export const MessageToolbar = ({ children }) => {
   const { usedTokens, resetConversation } = useContext(MessageContext);
-  const { activeAction, toggleActionsList } = useContext(ActionsContext);
+  const { activeAction, toggleActionsList, resetActiveAction } = useContext(ActionsContext);
 
   const handleReset = () => resetConversation();
 
   return (
     <>
       {activeAction?.title && (
-        <p className={cs(styles.info, styles.activeAction)}>{activeAction.title}</p>
+        <div className={styles.actionWrap}>
+          <p className={cs(styles.info, styles.activeAction)}>{activeAction.title}</p>
+          <button className={styles.resetAction} onClick={resetActiveAction}>
+            reset
+          </button>
+        </div>
       )}
       <div className={styles.messageToolbar}>
         <button
