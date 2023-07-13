@@ -6,21 +6,36 @@
   padding: 0 25px
 
   .messageCloud
+    position: relative
     background-color: $gray2
     border-radius: 20px
     padding: 15px 20px
     margin-bottom: 12px
     max-width: 90%
 
+    &.action
+      padding-top: 26px
+
     &.isQuestion
       align-self: flex-end
       background-color: $gray3
       margin: 0 0 12px auto
+
+    .action
+      position: absolute
+      top: 10px
+      left: 20px
+      color: $white
+      font-size: 11px
 
     .text
       color: $white
       font-size: 14px
       line-height: 21px
       background: transparent
+
+      code
+        color: $pureWhite
+        font-weight: 500
 
 

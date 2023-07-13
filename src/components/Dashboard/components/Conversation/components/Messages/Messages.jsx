@@ -33,7 +33,7 @@ export const Messages = () => {
     messagesRef.current?.lastElementChild?.scrollIntoView({ behavior: 'smooth' });
 
   const MarkdownComponents = {
-    code({ node, inline, className, ...props }) {
+    code({ node, inline, className, children, ...props }) {
       const hasLang = /language-(\w+)/.exec(className || '');
       const hasMeta = node?.data?.meta;
 
@@ -55,13 +55,13 @@ export const Messages = () => {
           style={syntaxTheme}
           language={hasLang[1]}
           PreTag='div'
-          className='codeStyle'
+          className={styles.text}
           showLineNumbers={true}
           wrapLines={hasMeta}
           useInlineStyles={true}
           lineProps={applyHighlights}
         >
-          {props.children}
+          {children}
         </SyntaxHighlighter>
       ) : (
         <code className={className} {...props} />
@@ -72,8 +72,15 @@ export const Messages = () => {
   return (
     <div className={styles.messages} ref={messagesRef}>
       {messages &&
-        messages?.map(({ text, isQuestion }, index) => (
-          <div className={cs(styles.messageCloud, { [styles.isQuestion]: isQuestion })} key={index}>
+        messages?.map(({ text, isQuestion, action }, index) => (
+          <div
+            className={cs(styles.messageCloud, {
+              [styles.isQuestion]: isQuestion,
+              [styles.action]: action,
+            })}
+            key={index}
+          >
+            <p className={styles.action}>{action}</p>
             <ReactMarkdown className={styles.text} components={MarkdownComponents}>
               {text}
             </ReactMarkdown>

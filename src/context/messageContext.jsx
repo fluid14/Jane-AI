@@ -15,9 +15,7 @@ const MessageContextProvider = ({ children }) => {
 
   const request = async (message) => {
     let query = null;
-    let mappedMessage = null;
     if (activeAction) {
-      mappedMessage = `${activeAction.title}: ${message}`;
       query = `
       ${activeAction.description}
       
@@ -28,10 +26,12 @@ const MessageContextProvider = ({ children }) => {
       `;
     } else {
       query = message;
-      mappedMessage = message;
     }
 
-    setMessages((prev) => [...prev, { text: mappedMessage, isQuestion: true }]);
+    setMessages((prev) => [
+      ...prev,
+      { text: message, isQuestion: true, action: activeAction.title },
+    ]);
     setTimeout(
       () => setMessages((prev) => [...prev, { text: "I'm thinking", isQuestion: false }]),
       1000,
