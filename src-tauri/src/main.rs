@@ -34,6 +34,10 @@ fn register_shortcut(app: &mut App) -> Result<(), tauri::Error> {
 
 fn main() {
     tauri::Builder::default()
+        .plugin(tauri_plugin_positioner::init())
+        .on_system_tray_event(|app, event| {
+                   tauri_plugin_positioner::on_tray_event(app, &event);
+                })
         .invoke_handler(tauri::generate_handler![toggle_window])
         .setup(move |app: &mut App| {
             if let Err(err) = register_shortcut(app) {

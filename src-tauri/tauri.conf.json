@@ -62,16 +62,23 @@
     "updater": {
       "active": false
     },
+    "macOSPrivateApi": true,
     "windows": [
       {
         "label": "launcher",
         "fullscreen": false,
         "maximizable": false,
-        "resizable": true,
+        "resizable": false,
         "title": "Jane AI Assistant",
         "height": 800,
         "width": 500,
-        "minWidth": 400
+        "minWidth": 400,
+        "x":  0,
+        "y": 0,
+        "alwaysOnTop": true,
+        "titleBarStyle": "Overlay",
+        "hiddenTitle": true,
+        "transparent": true
       }
     ]
   }
