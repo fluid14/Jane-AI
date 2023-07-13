@@ -30,7 +30,7 @@ const MessageContextProvider = ({ children }) => {
 
     setMessages((prev) => [
       ...prev,
-      { text: message, isQuestion: true, action: activeAction.title },
+      { text: message, isQuestion: true, action: activeAction.title ? activeAction.title : null },
     ]);
     setTimeout(
       () => setMessages((prev) => [...prev, { text: "I'm thinking", isQuestion: false }]),
