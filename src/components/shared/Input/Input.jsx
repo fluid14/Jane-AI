@@ -37,7 +37,7 @@ export const Input = ({
           {...rest}
         />
       )}
-      {error && <span>error</span>}
+      {error && <span>{error}</span>}
     </div>
   );
 };
